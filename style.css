@@ -1,0 +1,188 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    /* Warna Dasar (Nanti berubah lewat JS) */
+    background-color: #000; 
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    transition: background-color 1.5s ease; /* Transisi warna biar halus */
+}
+
+/* KELAS KHUSUS PAS MASUK HALAMAN UTAMA (SOFT THEME) */
+body.soft-mode {
+    /* Ganti 'bg-bunga.jpg' dengan nama file background lu */
+    background-image: url('assets/bunga.jpg'); 
+    background-size: cover; /* Biar gambar menuhin layar */
+    background-position: center;
+    background-attachment: fixed; /* Biar background diem pas di-scroll (Keren!) */
+    color: #5a3e3e; 
+}
+
+/* --- BAGIAN 1: INTRO (GELAP) --- */
+#intro-layer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: #000;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transition: opacity 1s ease;
+}
+
+canvas { position: absolute; top: 0; left: 0; z-index: -1; }
+
+.intro-content h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #ffb7b2;
+    font-size: 3rem;
+}
+
+.intro-content p { color: #ccc; margin-bottom: 20px; }
+
+button {
+    padding: 12px 25px;
+    background: #ff758c;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+}
+
+/* --- BAGIAN 2: KONTEN UTAMA (Awalnya Hidden) --- */
+.hidden { display: none !important; }
+
+#main-content {
+    padding: 20px;
+    padding-top: 40px;
+    animation: slideUp 1.5s ease;
+    max-width: 600px;
+    margin: 0 auto; /* Tengahin konten di laptop */
+}
+
+/* Section DEEP (Surat) */
+.timer-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #ffc2cd;
+}
+
+#timer {
+    font-family: 'Lora', serif;
+    color: #d63384;
+    margin-top: 10px;
+}
+
+.secret-letters .chapter {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(214, 51, 132, 0.1);
+    border-left: 5px solid #ff758c; /* Garis pinggir pink */
+}
+
+.chapter h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #c44569;
+}
+
+.chapter p {
+    font-family: 'Lora', serif; /* Font kayak buku novel */
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Divider (Garis Pemisah) */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ffc2cd;
+    margin: 40px 0;
+}
+
+/* Section FUN (Bunga) */
+.fun-section { text-align: center; }
+
+.flower-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.flower-item img {
+    width: 70px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.flower-item img:hover { transform: scale(1.2) rotate(10deg); }
+
+/* Pop-up Pesan */
+#pesan-bunga {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff0f3;
+    border: 2px dashed #ff758c;
+    border-radius: 10px;
+    animation: popIn 0.5s;
+}
+
+@keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #888;
+    padding-bottom: 20px;
+}
+/* --- STYLE FOTO POLAROID --- */
+.polaroid-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0; /* Jarak atas bawah */
+}
+
+.polaroid {
+    background-color: white;
+    padding: 10px; /* Bingkai putih */
+    padding-bottom: 40px; /* Bagian bawah lebih tebal buat caption */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan biar timbul */
+    transform: rotate(-3deg); /* MIRINGIN DIKIT BIAR AESTHETIC */
+    transition: transform 0.3s;
+    max-width: 80%; /* Biar gak kegedean di HP */
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05); /* Pas disentuh jadi lurus & gede */
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #eee; /* Garis tipis di pinggir foto */
+}
+
+.caption {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #555;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}

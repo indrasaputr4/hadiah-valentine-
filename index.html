@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Aurora ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora:ital,wght@0,400;1,400&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="intro-layer">
+        <canvas id="star-canvas"></canvas>
+        <div class="intro-content">
+            <h1>Hai, sayangkuu</h1>
+            <p>Ada cerita yang belum sempat terucap...</p>
+            <button onclick="bukaCerita()">Buka Halaman</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        
+        <audio id="bg-music" loop>
+            <source src="assets/ssstik.io_1770906285227.mp3" type="audio/mpeg">
+        </audio>
+
+        <section class="deep-section">
+            <div class="timer-box">
+                <p>Kita sudah melewati waktu selama:</p>
+                <h2 id="timer">0 Hari : 0 Jam : 0 Menit</h2>
+            </div>
+            <div class="polaroid-container">
+    <div class="polaroid">
+        <img src="assets/rora1.jpg" alt="orang cantik">
+        <div class="caption">siapa sih orang lucu di foto ini</div>
+    </div>
+</div>
+
+            <div class="secret-letters">
+                <div class="chapter">
+                    <h3>Chapter I: Yang Tak Terucap</h3>
+                    <p>"Terkadang aku diam bukan karena tak peduli, tapi karena aku bingung bagaimana merangkai kata untuk menjelaskan betapa berartinya kamu..."</p>
+                </div>
+                
+                <div class="chapter">
+                    <h3>Chapter II: Tentang Kita</h3>
+                    <p>"Di antara jutaan bintang (seperti di intro tadi), aku bersyukur orbit kita bertemu. Kamu bukan cuma pacar, tapi rumah."</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section class="fun-section">
+            <h3>Happy Valentine's Day! 🌹</h3>
+            <p>Pilih satu bunga untuk melihat alasan aku mencintaimu:</p>
+
+            <div class="flower-grid">
+                <div class="flower-item" onclick="bukaPesan(1)">
+                    <img src="assets/1000088589-removebg-preview.png" alt="Bunga 1">
+                </div>
+                <div class="flower-item" onclick="bukaPesan(2)">
+                    <img src="assets/kupukupu.png" alt="Bunga 2">
+                </div>
+                <div class="flower-item" onclick="bukaPesan(3)">
+                    <img src="assets/kucing.png" alt="Bunga 3">
+                </div>
+            </div>
+
+            <div id="pesan-bunga" class="hidden">
+                <p id="isi-pesan">...</p>
+                <button onclick="tutupPesan()">Tutup</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Selamanya Milikmu, Indra.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
